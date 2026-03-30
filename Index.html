@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>my special person</title>
+<style>
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.2);
+  border:1px solid rgba(255,255,255,0.3);
+  padding:20px;
+  border-radius:25px;
+  width:330px;
+  text-align:center;
+  color:#000;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fadeIn 1s ease;
+}
+button {
+  margin:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  background: rgba(255,255,255,0.5);
+}
+button:hover{
+  transform:scale(1.05);
+}
+#angryVideo {display:none;}
+@keyframes fadeIn {
+  from{opacity:0; transform:scale(0.8);} 
+  to{opacity:1; transform:scale(1);} 
+}
+.typing {
+  border-right:2px solid black;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 4s steps(50,end) forwards;
+}
+@keyframes typing {
+  to { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="card1">
+<h2>Hey My Princess cute pie 👑💖</h2>
+<p>Today is very special day of my life because it's your birthday 🎂✨</p>
+<p>🥺💞
+Kiyu rahti ho udas panditain,<br>
+Tumhi toh ho dil ke sabse pass panditain ❤️<br>
+Aur yu na rutha karo baat baat par panditain 😔<br>
+Maine bataya hai sabko ki tum ho sabse khaas panditain 💖👑
+</p>
+<button onclick="showSorry()">Gussa Hu 😡</button>
+<button onclick="nextCard()">aage chale </button>
+</div>
+
+<div class="card" id="card2" style="display:none">
+<p>🥺 Please cute pie mujhe maaf kar dijiye na ❤️<br>
+I know believe karna mushkil ho raha hoga...<br>
+Par main sach bol raha hu 💔<br>
+Pata nahi yaar mere sath hi aisa kyu hota hai 😞<br>
+Jab sab acha chal raha hota hai achanak sab kharab ho jata hai 💭<br>
+Please give me a chance 🙏💖
+</p>
+
+<video id="angryVideo" width="260" controls>
+<source src="lyrics_rewind_07-20260330-0001.mp4" type="video/mp4">
+</video>
+
+<p id="videoMsg" style="display:none;">🎥 Video surprise just for you 💖</p>
+<source src="lyrics_rewind_07-20260330-0001.mp4" type="video/mp4">
+</video>
+
+<br>
+<button onclick="playVideo()">Show Video 🎥</button>
+<button onclick="playExtraVideo()">Special Video 💖</button>
+
+<video id="extraVideo" width="260" controls style="display:none; margin-top:10px;">
+<source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+</video>
+<button onclick="nextCard2()">Next ➡️</button>
+</div>
+
+<div class="card" id="card3" style="display:none">
+<p class="typing">Aur bhi kuch hai... 💌✨</p>
+<button onclick="showFinal()">Click ❤️</button>
+</div>
+
+<div class="card" id="card4" style="display:none">
+<p>💖 Main aa raha hu aapse milne... Ready rehna Miss Madam ji 😉✨</p>
+<p>❤️✨
+ये तमन्ना फिर मचल जाए अगर तुम मिलने आ जाओ,<br>
+ये मौसम ही बदल जाए अगर तुम मिलने आ जाओ,<br>
+नहीं मिलते हो मुझसे तुम तो सब हमदर्द हैं मेरे,<br>
+ज़माना मुझसे जल जाए अगर तुम मिलने आ जाओ,<br>
+ज़माने भर के झगड़े, घर के किस्से काम की बातें,<br>
+बला हर एक टल जाए अगर तुम मिलने आ जाओ 💞
+</p>
+<p>🌹🎂 Happy Birthday My Special Girl 💖👑</p>
+</div>
+
+<script>
+function showSorry(){
+  document.getElementById('card1').style.display='none';
+  document.getElementById('card2').style.display='block';
+}
+function nextCard(){
+  document.getElementById('card1').style.display='none';
+  document.getElementById('card2').style.display='block';
+}
+function playVideo(){
+  document.getElementById('videoMsg').style.display='block';
+  setTimeout(()=>{
+    let vid = document.getElementById('angryVideo');
+    vid.style.display='block';
+    vid.play();
+  },2000); // 2 second delay
+}
+function nextCard2(){
+  document.getElementById('card2').style.display='none';
+  document.getElementById('card3').style.display='block';
+}
+function showFinal(){
+  document.getElementById('card3').style.display='none';
+  document.getElementById('card4').style.display='block';
+}
+
+function playExtraVideo(){
+  let v = document.getElementById('extraVideo');
+  v.style.display='block';
+  v.play();
+}
+</script>
+
+</body>
+</html>
+
